@@ -6,33 +6,35 @@
 /*   By: ibeliaie <ibeliaie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:25:07 by ibeliaie          #+#    #+#             */
-/*   Updated: 2023/07/17 18:33:17 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2023/07/20 22:52:48 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <unistd.h>
 
-static void	push(t_stack **source_stack, t_stack **destination_stack)
+/* push the top element of src stack to the top of dest stack */
+static void	push(t_stack **source, t_stack **destination)
 {
-	t_stack	*tmp;
+	t_stack	*temp;
 
-	if (!*source_stack)
+	if (!*source)
 		return ;
-	tmp = (*source_stack)->next;
-	(*source_stack)->next = *destination_stack;
-	*destination_stack = *source_stack;
-	*source_stack = tmp;
+	temp = (*source)->next;
+	(*source)->next = *destination;
+	*destination = *source;
+	*source = temp;
 }
 
-void	do_pa(t_stack **stack_a, t_stack **stack_b)
+/* push top b to a */
+void	pa(t_stack **a_stack, t_stack **b_stack)
 {
-	push(stack_b, stack_a);
+	push(b_stack, a_stack);
 	ft_putstr("pa\n");
 }
 
-void	do_pb(t_stack **stack_a, t_stack **stack_b)
+/* push top a to b */
+void	pb(t_stack **a_stack, t_stack **b_stack)
 {
-	push(stack_a, stack_b);
+	push(a_stack, b_stack);
 	ft_putstr("pb\n");
 }
