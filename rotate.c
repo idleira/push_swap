@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 22:33:44 by ibeliaie          #+#    #+#             */
-/*   Updated: 2023/07/20 22:55:43 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2023/07/23 19:59:29 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 /* send the top element of the stack to the bottom */
 static void	rotate(t_stack **stack)
 {
-	t_stack	*tmp;
+	t_stack	*temp;
 	t_stack	*tail;
 
-	tmp = *stack;
+	temp = *stack;
 	*stack = (*stack)->next;
 	tail = get_last_element(*stack);
-	tmp->next = NULL;
-	tail->next = tmp;
+	temp->next = NULL;
+	tail->next = temp;
 }
 
 /* rotate a */
