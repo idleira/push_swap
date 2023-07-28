@@ -6,26 +6,31 @@
 /*   By: ibeliaie <ibeliaie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 22:56:51 by ibeliaie          #+#    #+#             */
-/*   Updated: 2023/07/24 18:46:45 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2023/07/28 13:36:46 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* free each element in a given stack and set the stack pointer to NULL */
-void	free_stack(t_stack **stack)
+/* return absolute value of a number */
+int	abs_val(int nb)
 {
-	t_stack	*tmp;
+	if (nb < 0)
+		return (nb * -1);
+	return (nb);
+}
 
-	if (!stack || !(*stack))
-		return ;
-	while (*stack)
+/* print given string to standart output */
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
 	{
-		tmp = (*stack)->next;
-		free(*stack);
-		*stack = tmp;
+		write(1, &str[i], 1);
+		i++;
 	}
-	*stack = NULL;
 }
 
 /* convert string to long int */
@@ -53,34 +58,29 @@ long int	ft_atoi(const char *str)
 	return (nb * isneg);
 }
 
-/* write error to the standard output after freeing */
-void	error_exit(t_stack **stack_a, t_stack **stack_b)
+/* free each element in a given stack and set the stack pointer to NULL */
+void	free_stack(t_stack **stack)
 {
-	if (stack_a == NULL || *stack_a != NULL)
-		free_stack(stack_a);
-	if (stack_b == NULL || *stack_b != NULL)
-		free_stack(stack_b);
+	t_stack	*temp;
+
+	if (!stack || !(*stack))
+		return ;
+	while (*stack)
+	{
+		temp = (*stack)->next;
+		free(*stack);
+		*stack = temp;
+	}
+	*stack = NULL;
+}
+
+/* write error to the standard output after freeing */
+void	error_exit(t_stack **a_stack, t_stack **b_stack)
+{
+	if (a_stack == NULL || *a_stack != NULL)
+		free_stack(a_stack);
+	if (b_stack == NULL || *b_stack != NULL)
+		free_stack(b_stack);
 	write(2, "Error\n", 6);
 	exit (1);
-}
-
-/* print given string to standart output */
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-}
-
-/* return absolute value of a number */
-int	absolute_val(int nb)
-{
-	if (nb < 0)
-		return (nb * -1);
-	return (nb);
 }

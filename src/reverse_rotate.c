@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 22:31:57 by ibeliaie          #+#    #+#             */
-/*   Updated: 2023/07/20 22:55:52 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2023/07/27 13:04:14 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 /* bring the bottom element of a stack to the top */
 static void	rev_rotate(t_stack **stack)
 {
-	t_stack	*tmp;
+	t_stack	*temp;
 	t_stack	*tail;
 	t_stack	*before_tail;
 
 	tail = get_last_element(*stack);
 	before_tail = get_second_to_last(*stack);
-	tmp = *stack;
+	temp = *stack;
 	*stack = tail;
-	(*stack)->next = tmp;
+	(*stack)->next = temp;
 	before_tail->next = NULL;
 }
 

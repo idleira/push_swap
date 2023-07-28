@@ -6,23 +6,23 @@
 /*   By: ibeliaie <ibeliaie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:25:07 by ibeliaie          #+#    #+#             */
-/*   Updated: 2023/07/20 22:52:48 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2023/07/27 13:02:11 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* push the top element of src stack to the top of dest stack */
-static void	push(t_stack **source, t_stack **destination)
+static void	push(t_stack **src, t_stack **dest)
 {
 	t_stack	*temp;
 
-	if (!*source)
+	if (*src == NULL)
 		return ;
-	temp = (*source)->next;
-	(*source)->next = *destination;
-	*destination = *source;
-	*source = temp;
+	temp = (*src)->next;
+	(*src)->next = *dest;
+	*dest = *src;
+	*src = temp;
 }
 
 /* push top b to a */

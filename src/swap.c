@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 14:52:32 by ibeliaie          #+#    #+#             */
-/*   Updated: 2023/07/17 18:33:52 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2023/07/27 13:02:11 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,16 @@
 /* swap the top 2 elements on the stack; do nothing if only 1 or no elements */
 static void	swap(t_stack *stack)
 {
-	int	temp_value;
-	int	temp_index;
+	int	temp;
 
-	if (!stack || !(stack->next))
+	if (stack == NULL || stack->next == NULL)
 		return ;
-	temp_value = stack->value;
+	temp = stack->value;
 	stack->value = stack->next->value;
-	stack->next->value = temp_value;
-	temp_index = stack->index;
+	stack->next->value = temp;
+	temp = stack->index;
 	stack->index = stack->next->index;
-	stack->next->index = temp_index;
+	stack->next->index = temp;
 }
 
 /* swap A */
