@@ -6,31 +6,11 @@
 /*   By: ibeliaie <ibeliaie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 19:36:03 by ibeliaie          #+#    #+#             */
-/*   Updated: 2023/07/28 13:24:59 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2023/07/28 14:10:40 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	main(int argc, char **argv)
-{
-	t_stack	*a_stack;
-	t_stack	*b_stack;
-	int		size;
-
-	if (argc < 2)
-		return (0);
-	if (!check_input(argv))
-		error_exit(NULL, NULL);
-	b_stack = NULL;
-	a_stack = fill_stack(argc, argv);
-	size = stack_size(a_stack);
-	assign_index(a_stack, size + 1);
-	push_swap(&a_stack, &b_stack, size);
-	free_stack(&a_stack);
-	free_stack(&b_stack);
-	return (0);
-}
 
 /* choose a sorting method depending on the number of values to be sorted */
 static void	push_swap(t_stack **a_stack, t_stack **b_stack, int stack_size)
@@ -53,4 +33,24 @@ int	is_sorted(t_stack *stack)
 		stack = stack->next;
 	}
 	return (1);
+}
+
+int	main(int argc, char **argv)
+{
+	t_stack	*a_stack;
+	t_stack	*b_stack;
+	int		size;
+
+	if (argc < 2)
+		return (0);
+	if (!check_input(argv))
+		error_exit(NULL, NULL);
+	b_stack = NULL;
+	a_stack = fill_stack(argc, argv);
+	size = stack_size(a_stack);
+	assign_index(a_stack, size + 1);
+	push_swap(&a_stack, &b_stack, size);
+	free_stack(&a_stack);
+	free_stack(&b_stack);
+	return (0);
 }

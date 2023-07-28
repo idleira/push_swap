@@ -6,23 +6,11 @@
 /*   By: ibeliaie <ibeliaie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 19:36:06 by ibeliaie          #+#    #+#             */
-/*   Updated: 2023/07/28 13:38:47 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2023/07/28 14:10:19 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/* choose which move to make to get B element to correct position in A */
-void	move(t_stack **a, t_stack **b, int cost_a, int cost_b)
-{
-	if (cost_a < 0 && cost_b < 0)
-		rev_rotate_both(a, b, &cost_a, &cost_b);
-	else if (cost_a > 0 && cost_b > 0)
-		rotate_both(a, b, &cost_a, &cost_b);
-	rotate_a(a, &cost_a);
-	rotate_b(b, &cost_b);
-	pa(a, b);
-}
 
 /* rev rotate both stacks until one of them is in position */
 static void	rev_rotate_both(t_stack **a, t_stack **b,
@@ -81,4 +69,16 @@ static void	rotate_b(t_stack **b, int *cost)
 			(*cost)++;
 		}
 	}
+}
+
+/* choose which move to make to get B element to correct position in A */
+void	move(t_stack **a, t_stack **b, int cost_a, int cost_b)
+{
+	if (cost_a < 0 && cost_b < 0)
+		rev_rotate_both(a, b, &cost_a, &cost_b);
+	else if (cost_a > 0 && cost_b > 0)
+		rotate_both(a, b, &cost_a, &cost_b);
+	rotate_a(a, &cost_a);
+	rotate_b(b, &cost_b);
+	pa(a, b);
 }

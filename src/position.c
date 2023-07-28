@@ -6,28 +6,11 @@
 /*   By: ibeliaie <ibeliaie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 18:52:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2023/07/28 13:39:11 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2023/07/28 14:10:54 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	get_target_position(t_stack **a, t_stack **b)
-{
-	t_stack	*temp_b;
-	int		target_pos;
-
-	temp_b = *b;
-	get_position(a);
-	get_position(b);
-	target_pos = 0;
-	while (temp_b)
-	{
-		target_pos = get_target(a, temp_b->index, INT_MAX, target_pos);
-		temp_b->target_pos = target_pos;
-		temp_b = temp_b->next;
-	}
-}
 
 /* assign position to each element of stack:top to bottom, ascending */
 static void	get_position(t_stack **stack)
@@ -96,4 +79,22 @@ static int	get_target(t_stack **a, int b_idx,
 		temp_a = temp_a->next;
 	}
 	return (target_pos);
+}
+
+
+void	get_target_position(t_stack **a, t_stack **b)
+{
+	t_stack	*temp_b;
+	int		target_pos;
+
+	temp_b = *b;
+	get_position(a);
+	get_position(b);
+	target_pos = 0;
+	while (temp_b)
+	{
+		target_pos = get_target(a, temp_b->index, INT_MAX, target_pos);
+		temp_b->target_pos = target_pos;
+		temp_b = temp_b->next;
+	}
 }
