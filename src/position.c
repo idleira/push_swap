@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 18:52:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2023/07/28 14:10:54 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2023/07/31 11:36:33 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ static int	get_target(t_stack **a, int b_idx,
 	}
 	return (target_pos);
 }
-
 
 void	get_target_position(t_stack **a, t_stack **b)
 {
