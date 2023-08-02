@@ -6,7 +6,7 @@
 #    By: ibeliaie <ibeliaie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/27 13:07:42 by ibeliaie          #+#    #+#              #
-#    Updated: 2023/07/28 13:04:04 by ibeliaie         ###   ########.fr        #
+#    Updated: 2023/08/02 05:33:01 by ibeliaie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,20 +32,24 @@ SRC =	src/push.c src/swap.c src/rotate.c src/reverse_rotate.c		\
 
 OBJ = $(SRC:.c=.o)
 
+LIBFT_DIR =	./libft
+LIBFT =	$(LIBFT_DIR)/libft.a
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+	@$(MAKE) -C ./libft
+	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(LIBFT)
 	@echo "$(DEF_COLOR)   	 ( \   / ) \n \
   	$(DEF_COLOR) (˶ ˘ ᵕ ˘ )	💬 $(PINK)" push_swap compiled successfully ☆" \n \
 	$(DEF_COLOR)	c( っ    っ\n $(DEF_COLOR)"
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(LIBFT_DIR)/*.o
 	@echo "$(YELLOW)			💬 " object files removed ☆"  $(DEF_COLOR)"
 
 fclean: clean
-	$(RM) -f $(NAME)
+	$(RM) -f $(NAME) $(LIBFT_DIR)/*.o libft/libft.a
 	@echo "$(GREEN)			💬 " everything cleaned ☆" $(DEF_COLOR)"
 	
 re: fclean all
