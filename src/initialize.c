@@ -6,14 +6,14 @@
 /*   By: ibeliaie <ibeliaie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 18:34:51 by ibeliaie          #+#    #+#             */
-/*   Updated: 2023/07/28 12:02:08 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2023/08/02 05:29:35 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* fll a_stack with provided values */
-t_stack	*fill_stack(int argc, char **argv)
+t_stack	*fill_stack(char **argv)
 {
 	t_stack		*a_stack;
 	long int	nb;
@@ -21,13 +21,13 @@ t_stack	*fill_stack(int argc, char **argv)
 
 	a_stack = NULL;
 	nb = 0;
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (argv[i])
 	{
 		nb = ft_atoi(argv[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
 			error_exit(&a_stack, NULL);
-		if (i == 1)
+		if (i == 0)
 			a_stack = new_stack((int)nb);
 		else
 			add_bottom(&a_stack, new_stack((int)nb));

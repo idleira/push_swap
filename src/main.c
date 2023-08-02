@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 19:36:03 by ibeliaie          #+#    #+#             */
-/*   Updated: 2023/07/28 14:10:40 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2023/08/02 05:29:25 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,19 @@ int	main(int argc, char **argv)
 	t_stack	*b_stack;
 	int		size;
 
-	if (argc < 2)
+	if (argc <= 1)
+	{
+		write(1, "ERROR: Single argument provided\n", 32);
 		return (0);
+	}
+	else if (argc == 2)
+		argv = ft_split(argv[1], ' ');
+	else
+		argv = argv + 1;
 	if (!check_input(argv))
 		error_exit(NULL, NULL);
 	b_stack = NULL;
-	a_stack = fill_stack(argc, argv);
+	a_stack = fill_stack(argv);
 	size = stack_size(a_stack);
 	assign_index(a_stack, size + 1);
 	push_swap(&a_stack, &b_stack, size);
