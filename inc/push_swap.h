@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 14:48:23 by ibeliaie          #+#    #+#             */
-/*   Updated: 2023/07/28 13:37:02 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2023/08/02 05:29:08 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdio.h>
+# include "../libft/libft.h"
 
 typedef struct s_stack
 {
@@ -40,7 +41,7 @@ int			compare_nbr_str(const char *s1, const char *s2);
 
 /* initialize */
 
-t_stack		*fill_stack(int argc, char **argv);
+t_stack		*fill_stack(char **argv);
 void		assign_index(t_stack *a_stack, int stack_size);
 
 /* cost */
@@ -76,7 +77,6 @@ void		add_bottom(t_stack **stack, t_stack *new);
 /* utility */
 int			abs_val(int nb);
 void		ft_putstr(char *str);
-long int	ft_atoi(const char *str);
 void		free_stack(t_stack **stack);
 
 void		error_exit(t_stack **a_stack, t_stack **b_stack);
