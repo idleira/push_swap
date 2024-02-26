@@ -28,7 +28,13 @@ some resources that helped me:
 | `rrr` | reverse rotate a + reverse rotate b | `rra` and `rrb` at the same time|
 
 ## performance
-i used 
+i used efficient positional sorting algorithm that sorts by index and position.
+
+[push_swap 50 values](https://github.com/idleira/push_swap/assets/127216218/e43e1244-dbba-4d55-8b3d-540854fa4553)
+[push_swap 100 values](https://github.com/idleira/push_swap/assets/127216218/b3058400-5995-4fd1-961e-65291015a83c)
+[push_swap 500 values](https://github.com/idleira/push_swap/assets/127216218/0e2ef26e-1dca-4539-a5ae-55c6b55471f2)
+
+
 
 ## usage
 1. clone this repository: `git@github.com:idleira/push_swap.git push_swap && cd push_swap`
