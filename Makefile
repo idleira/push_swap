@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ibeliaie <ibeliaie@student.42.fr>          +#+  +:+       +#+         #
+#    By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/27 13:07:42 by ibeliaie          #+#    #+#              #
-#    Updated: 2023/08/02 05:33:01 by ibeliaie         ###   ########.fr        #
+#    Updated: 2024/03/01 16:00:53 by ibeliaie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ LIBFT =	$(LIBFT_DIR)/libft.a
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@$(MAKE) -C ./libft
+	@$(MAKE) -sC ./libft
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(LIBFT)
 	@echo "$(DEF_COLOR)   	 ( \   / ) \n \
   	$(DEF_COLOR) (˶ ˘ ᵕ ˘ )	💬 $(PINK)" push_swap compiled successfully ☆" \n \
