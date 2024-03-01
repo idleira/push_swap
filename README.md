@@ -53,7 +53,7 @@ here you can see how it performs, thanks to [this](https://github.com/Niimphu/pu
 ![push_swap 500 values](https://github.com/idleira/push_swap/assets/127216218/8203b0e1-d4ae-46ca-bceb-bd9a972e6855)
 
 ## usage
-1. clone this repository: `clone git@github.com:idleira/push_swap.git push_swap && cd push_swap`
+1. clone this repository: `git clone git@github.com:idleira/push_swap.git push_swap && cd push_swap`
 
 2. compile the project with `make`
 
