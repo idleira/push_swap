@@ -1,5 +1,6 @@
 # push_swap - @42Wolfsburg
-*"According to all known laws of aviation, there is no way a bee should be able to fly.*
+
+*"because swap_push isn’t as natural."*
 ## description
 push_swap is a very simple and a highly straightforward algorithm project where we sort data.
 
@@ -9,8 +10,17 @@ our gois to write a program in c called push_swap which calculates and displays 
 
 this program is made up of solely push swap language instructions.
 
-some resources that helped me:
+## 
 
+here are some **resources** i used:
+
+• [sorting algorithms](https://www.geeksforgeeks.org/sorting-algorithms/)
+
+• [push swap — a journey to find most efficient sorting algorithm](https://medium.com/@ayogun/push-swap-c1f5d2d41e97)
+
+• [push_swap: the least amount of moves with two stacks](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
+
+## 
 
 ## push_swap instructions
 | key | instruction | action |
@@ -28,16 +38,29 @@ some resources that helped me:
 | `rrr` | reverse rotate a + reverse rotate b | `rra` and `rrb` at the same time|
 
 ## performance
-i used efficient positional sorting algorithm that sorts by index and position.
+i used a positional sorting algorithm, it sorts by index and position.
 
-[push_swap 50 values](https://github.com/idleira/push_swap/assets/127216218/e43e1244-dbba-4d55-8b3d-540854fa4553)
-[push_swap 100 values](https://github.com/idleira/push_swap/assets/127216218/b3058400-5995-4fd1-961e-65291015a83c)
-[push_swap 500 values](https://github.com/idleira/push_swap/assets/127216218/0e2ef26e-1dca-4539-a5ae-55c6b55471f2)
+this algorithm is very efficient: its results are well below the limits that the push_swap evaluation imposes.
 
+here you can see how it performs, thanks to [this](https://github.com/Niimphu/push_swap_visualiser) visualiser by [Niimphu](https://github.com/Niimphu).
+![push_swap 50 values](https://github.com/idleira/push_swap/assets/127216218/71ed9480-97a4-406b-904a-d29d1a770030)
 
+• to get full 5 points when working with 100 values, the list of instructions must be less than 700 (mine ranges from 550 to 640):
+![push_swap 100 values](https://github.com/idleira/push_swap/assets/127216218/cef83f1c-960b-40f2-b4b6-b2961f52b213)
+
+• to get full 5 points when working with 500 values, the list of instructions must be less than 5500 (mine ranges from 4500 to 5000):
+![push_swap 500 values](https://github.com/idleira/push_swap/assets/127216218/8203b0e1-d4ae-46ca-bceb-bd9a972e6855)
 
 ## usage
 1. clone this repository: `git@github.com:idleira/push_swap.git push_swap && cd push_swap`
+
+2. compile the project with `make`
+
+3. give the algorithm a random amount of negative and/or positive numbers, which cannot be duplicated:
+
+   `./push_swap 2 9 6 10 67`
+
+   → the output will look like this: `pb pb ra pa rra pa`, to visualize these operations use the [visualizer](https://github.com/Niimphu/push_swap_visualiser) (duh).
 
 ## my final grade
 ![push_swap grade 100/100](https://github.com/idleira/push_swap/assets/127216218/2b325d1b-2c5b-48f7-a77b-d5555a1b6181)
