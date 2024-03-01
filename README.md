@@ -1,6 +1,7 @@
 # push_swap - @42Wolfsburg
 
 *"because swap_push isn’t as natural."*
+
 ## description
 push_swap is a very simple and a highly straightforward algorithm project where we sort data.
 
@@ -8,7 +9,7 @@ we have at our disposal a set of integer values, 2 stacks, and a set of instruct
 
 our gois to write a program in c called push_swap which calculates and displays on the standard output the smallest program that sorts the integers received as arguments.
 
-this program is made up of solely push swap language instructions.
+this program is made up of solely push swap language **instructions**.
 
 ## 
 
